@@ -10,6 +10,9 @@ namespace BotTools
     {
         // disabled
         [JsonPropertyName("enabled")] public bool Enabled { get; set; } = true;
+        // bot names
+        [JsonPropertyName("bot_names")] public List<string> BotNames { get; set; } = [];
+        [JsonPropertyName("bot_clantag")] public string BotClantag { get; set; } = "";
     }
 
     public class PluginConfig : BasePluginConfig
@@ -18,6 +21,21 @@ namespace BotTools
         [JsonPropertyName("enabled")] public bool Enabled { get; set; } = true;
         // debug prints
         [JsonPropertyName("debug")] public bool Debug { get; set; } = false;
+        // bot names
+        [JsonPropertyName("bot_names")]
+        public List<string> BotNames { get; set; } = [
+            "Adam Sapfel", "Alex Miamorsch", "Al Dorado", "Ali Gator", "Ali Mente", "Andi Macht", "Andi Tür", "Andi Wand",
+            "André Henn", "Andreas Kreuz","Anke Brandt", "Anna Bolicker", "Anna Lüse", "Anne Theke", "Axel Schweiß",
+            "Bernhard Diener", "Christian Steiffen", "Christof Smaul", "Claire Grube", "Dennis Platz", "Dieter Pete",
+            "Ellen Bogen", "Elli Fand", "Erik Zion", "Ernst Haft", "Frank Furt", "Frank Reich", "Franz Ohse", "Hans Wurst",
+            "Harry Gehrsack", "Heinz Fiction", "Hugo Slawien", "Jens Seitz", "John Glöhr", "Kai Sehr", "Karl Auer",
+            "Karl Mussmer", "Karl Nickel", "Klara Himmel", "Klaus Thaler", "Klaus Uhr", "Konstantin Opel", "Kristiane Latte",
+            "Lee Ceur", "Leo Pard", "Lisa Bonn", "Mario Nette", "Mark Aroni", "Mark Reele", "Martha Pfahl", "Matt Eagle",
+            "Matt Ritze", "Mike Rosofft", "Mira Bellenbaum", "Moni Thor", "Nico Tiehn", "Paul Enis", "Paul Lahner", "Peter Silie",
+            "Pia Nist", "Rainer Hohn", "Rainer Wein", "Rob Otter", "Roman Ticker", "Sam Stag", "Shawn Steinfeger", "Sepp Tember",
+            "Theo Loge", "Tom Bohler", "Tom Mate", "Volker Racho", "Wanda Lismus", "Wilma Bier", "Wilma Gern"
+        ];
+        [JsonPropertyName("bot_clantag")] public string BotClantag { get; set; } = "";
         // map configurations
         [JsonPropertyName("maps")] public Dictionary<string, MapConfig> MapConfigs { get; set; } = new Dictionary<string, MapConfig>();
     }

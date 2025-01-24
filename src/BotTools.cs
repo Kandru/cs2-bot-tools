@@ -18,7 +18,7 @@ namespace BotTools
             UpdateConfig();
             SaveConfig();
             // register listeners
-            RegisterEventHandler<EventRoundStart>(OnRoundStart);
+            RegisterEventHandler<EventPlayerConnectFull>(OnPlayerConnectFull);
             // print message if hot reload
             if (hotReload)
             {
@@ -33,13 +33,19 @@ namespace BotTools
         public override void Unload(bool hotReload)
         {
             // unregister listeners
-            DeregisterEventHandler<EventRoundStart>(OnRoundStart);
+            DeregisterEventHandler<EventPlayerConnectFull>(OnPlayerConnectFull);
             Console.WriteLine(Localizer["core.unload"]);
         }
 
-        private HookResult OnRoundStart(EventRoundStart @event, GameEventInfo info)
+        private HookResult OnPlayerConnectFull(EventPlayerConnectFull @event, GameEventInfo info)
         {
-            DebugPrint("Round started");
+            DebugPrint("Player connected");
+            // get player
+            CCSPlayerController? player = @event.Userid;
+            if (player == null
+                || !player.IsValid) return HookResult.Continue;
+            // change bot name
+            ChangeBotName(player);
             // continue event
             return HookResult.Continue;
         }

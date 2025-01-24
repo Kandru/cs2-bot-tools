@@ -11,7 +11,7 @@ This plugin changes aspects of the bots
 
 ## Current Features
 
-- Change player names
+- Change bot names
 
 ## Plugin Installation
 
