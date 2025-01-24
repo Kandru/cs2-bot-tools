@@ -1,0 +1,9 @@
+{
+    "core.hotreload": "[BotTools] Neu geladen! Würfen ab nächster Runde!",
+    "core.unload": "[BotTools] BotTools Plugin entladen!",
+    "core.defaultconfig": "[BotTools] Keine kartenspezifische Konfiguration für {mapName} gefunden, Standardkonfiguration wird verwendet!",
+    "core.noconfig": "[BotTools] Keine kartenspezifische Konfiguration für {mapName} oder Standardkonfiguration gefunden. Überspringen!",
+    "core.foundconfig": "[BotTools] {count} passende kartenspezifische Konfigurationen für {mapName} gefunden!",
+    "core.disabled": "[BotTools] {default}BotTools ist deaktiviert!",
+    "core.debugprint": "[BotTools]{red}[DEBUG] {default}{message}"
+}

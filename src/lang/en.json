@@ -1,0 +1,9 @@
+{
+    "core.hotreload": "{green}[BotTools] {default}Hot-Reloaded BotTools!",
+    "core.unload": "[BotTools] Unloaded BotTools Plugin!",
+    "core.defaultconfig": "[BotTools] Found no map-specific configuration for {mapName}, using default one!",
+    "core.noconfig": "[BotTools] No map-specific configuration for {mapName} or default one found. Skipping!",
+    "core.foundconfig": "[BotTools] Found {count} matching map-specific configurations for {mapName}!",
+    "core.disabled": "[BotTools] {default}BotTools is disabled!",
+    "core.debugprint": "[BotTools]{red}[DEBUG] {default}{message}"
+}
