@@ -4,6 +4,6 @@ namespace BotTools
 {
     public partial class BotTools : BasePlugin
     {
-        public override string ModuleVersion => "0.0.1";
+        public override string ModuleVersion => "0.0.2";
     }
 }
