@@ -7,7 +7,6 @@ namespace BotTools
 {
     public class BotProfileConfig
     {
-        [JsonPropertyName("name")] public string Name { get; set; } = "unnamed";
         [JsonPropertyName("health")] public int Health { get; set; } = 100;
         [JsonPropertyName("strip_old_weapons")] public bool StripOldWeapons { get; set; } = true;
         [JsonPropertyName("weapons")] public List<string> Weapons { get; set; } = ["weapon_aug", "weapon_deagle", "weapon_hegrenade", "weapon_smokegrenade"];
@@ -34,7 +33,7 @@ namespace BotTools
             "Theo Loge", "Tom Bohler", "Tom Mate", "Volker Racho", "Wanda Lismus", "Wilma Bier", "Wilma Gern"
         ];
         [JsonPropertyName("bot_clantag")] public string BotClantag { get; set; } = "";
-        // bot profiles
+        [JsonPropertyName("enable_buy_zone")] public bool EnableBuyZone { get; set; } = false;
         [JsonPropertyName("bot_profiles")] public Dictionary<string, BotProfileConfig> BotProfiles { get; set; } = new Dictionary<string, BotProfileConfig>();
     }
 

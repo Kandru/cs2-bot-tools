@@ -1,4 +1,8 @@
-﻿using CounterStrikeSharp.API.Core;
+﻿using CounterStrikeSharp.API;
+using CounterStrikeSharp.API.Core;
+using CounterStrikeSharp.API.Modules.Memory;
+using CounterStrikeSharp.API.Modules.Memory.DynamicFunctions;
+using CounterStrikeSharp.API.Modules.Utils;
 
 namespace BotTools
 {
@@ -16,6 +20,7 @@ namespace BotTools
             UpdateConfig();
             SaveConfig();
             // register listeners
+            VirtualFunctions.CCSPlayer_ItemServices_CanAcquireFunc.Hook(OnWeaponCanAcquire, HookMode.Pre);
             RegisterEventHandler<EventPlayerSpawn>(OnPlayerSpawn);
             RegisterEventHandler<EventPlayerTeam>(OnPlayerTeam);
             // print message if hot reload
@@ -43,6 +48,19 @@ namespace BotTools
                 || !bot.IsBot) return HookResult.Continue;
             SetBotLoadout(bot);
             // continue event
+            return HookResult.Continue;
+        }
+
+        public HookResult OnWeaponCanAcquire(DynamicHook hook)
+        {
+            if (!Config.Enabled) return HookResult.Continue;
+            if (Config.EnableBuyZone) return HookResult.Continue;
+            if (Config.BotProfiles.Count == 0) return HookResult.Continue;
+            CCSPlayerController bot = hook.GetParam<CCSPlayer_ItemServices>(0).Pawn.Value!.Controller.Value!.As<CCSPlayerController>();
+            if (bot == null
+                || !bot.IsValid
+                || !bot.IsBot) return HookResult.Continue;
+            hook.SetReturn(AcquireResult.AlreadyPurchased);
             return HookResult.Continue;
         }
 
