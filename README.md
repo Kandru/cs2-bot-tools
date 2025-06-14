@@ -19,7 +19,7 @@ This plugin changes aspects of the bots
 ## Plugin Installation
 
 1. Download and extract the latest release from the [GitHub releases page](https://github.com/Kandru/cs2-bot-tools/releases/).
-2. Move the "BotTools" folder to the `/addons/counterstrikesharp/configs/plugins/` directory of your gameserver.
+2. Move the "BotTools" folder to the `/addons/counterstrikesharp/plugins/` directory of your gameserver.
 3. Restart the server.
 
 ## Plugin Update
